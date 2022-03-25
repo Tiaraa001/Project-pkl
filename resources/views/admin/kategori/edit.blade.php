@@ -1,0 +1,58 @@
+@extends('adminlte::page')
+
+@section('title', 'Edit Dara Masakan')
+
+@section('content_header')
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Data Masakan</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                Edit Data Masakan
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">Edit Data Masakan</div>
+                    <div class="card-body">
+                        <form action="{{ route('kategori.update', $kategori->id) }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('put')
+                            <div class="form-group">
+                                <label for="">Nama Kategori</label>
+                                <input type="text" name="nama_kategori" value="{{ $kategori->nama_kategori }}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="reset" class="btn btn-outline btn-sm btn btn-warning">Reset</button>
+                                <button type="submit" class="btn btn-outline btn-sm btn btn-danger">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('css')
+
+@endsection
+@section('js')
+@endsection
